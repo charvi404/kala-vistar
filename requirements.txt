@@ -1,0 +1,36 @@
+# Kala Vistar - AI-Powered Marketplace Assistant for Local Artisans
+# This is a React/TypeScript project - dependencies are managed via package.json
+
+# Frontend Framework & Build Tools
+# React 18.3.1 - UI library
+# TypeScript 5.5.3 - Type safety
+# Vite 5.4.2 - Build tool and dev server
+
+# UI & Styling
+# Tailwind CSS 3.4.1 - Utility-first CSS framework
+# Lucide React 0.344.0 - Icon library
+# PostCSS 8.4.35 - CSS processing
+# Autoprefixer 10.4.18 - CSS vendor prefixes
+
+# Development Tools
+# ESLint 9.9.1 - Code linting
+# TypeScript ESLint 8.3.0 - TypeScript-specific linting rules
+
+# Backend/Database (if needed in future)
+# Supabase JS 2.57.4 - Backend as a service client
+
+# To install dependencies, run:
+# npm install
+
+# To start development server:
+# npm run dev
+
+# To build for production:
+# npm run build
+
+# Key Features Implemented:
+# - Interactive AI chatbot with mock responses
+# - Neighborhood predictor with dynamic charts
+# - Marketing content generator
+# - Responsive design with Indian cultural elements
+# - Contact forms and social media integration
