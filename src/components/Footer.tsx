@@ -62,7 +62,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center space-x-2 mb-6">
               <Sparkles className="h-8 w-8 text-orange-600" />
-              <span className="text-2xl font-bold">ArtisanAI</span>
+              <span className="text-2xl font-bold">Kala Vistar</span>
             </div>
             
             <p className="text-gray-400 mb-6">
@@ -72,7 +72,7 @@ export default function Footer() {
             <div className="space-y-3 mb-8">
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-orange-600" />
-                <span>contact@artisanai.com</span>
+                <span>contact@kalavistar.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-orange-600" />
@@ -108,7 +108,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <p className="text-gray-400">
-            © 2025 ArtisanAI. All rights reserved. Empowering artisans with intelligent technology.
+            © 2025 Kala Vistar. All rights reserved. Empowering artisans with intelligent technology.
           </p>
         </div>
       </div>

@@ -76,7 +76,7 @@ export default function Chatbot({ onClose }: ChatbotProps) {
         <div className="flex items-center justify-between p-4 border-b border-gray-200">
           <div className="flex items-center space-x-2">
             <Bot className="w-6 h-6 text-orange-600" />
-            <h3 className="font-semibold text-gray-800">ArtisanAI Assistant</h3>
+            <h3 className="font-semibold text-gray-800">Kala Vistar Assistant</h3>
           </div>
           <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
             <X className="w-5 h-5" />

@@ -8,7 +8,7 @@ export default function Header() {
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center space-x-2">
             <Sparkles className="h-8 w-8 text-orange-600" />
-            <span className="text-2xl font-bold text-gray-800">ArtisanAI</span>
+            <span className="text-2xl font-bold text-gray-800">Kala Vistar</span>
           </div>
           <nav className="hidden md:flex space-x-8">
             <a href="#home" className="text-gray-600 hover:text-orange-600 transition-colors">Home</a>

@@ -6,7 +6,7 @@ export default function About() {
     <section id="about" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">About ArtisanAI</h2>
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">About Kala Vistar</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             We combine tradition with technology. By predicting urban trends and providing AI tools, 
             we empower artisans to thrive in both offline and online marketplaces.
@@ -47,7 +47,7 @@ export default function About() {
 
         <div className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-2xl p-8 md:p-12">
           <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-3xl font-bold text-gray-800 mb-6">Why Choose ArtisanAI?</h3>
+            <h3 className="text-3xl font-bold text-gray-800 mb-6">Why Choose Kala Vistar?</h3>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="text-left">
                 <h4 className="text-xl font-semibold text-gray-800 mb-3">For Traditional Artisans</h4>
