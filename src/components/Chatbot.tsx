@@ -11,13 +11,6 @@ interface ChatbotProps {
   onClose: () => void;
 }
 
-const mockResponses: { [key: string]: string } = {
-  'where should i open a shop in mumbai': "Based on current market trends, Andheri is showing high growth potential with a score of 85. The area has good footfall, rising disposable income, and growing appreciation for handmade crafts. Consider opening a store there for maximum visibility.",
-  'what products are trending in bandra': "In Bandra, eco-friendly home décor and pottery are currently trending. Handmade candles, bamboo products, and traditional Indian wall art are also performing well. The area attracts conscious consumers who value sustainability.",
-  'what price should i set for pottery': "For pottery in South Mumbai, the optimal price range is ₹1200–₹1500 for medium-sized decorative pieces. In areas like Bandra and Andheri, you can command premium prices due to higher purchasing power. Consider starting at ₹1300 for artisanal pottery.",
-  'help': "I can help you with:\n• Finding the best neighborhoods to sell your crafts\n• Product pricing recommendations\n• Market trends and popular products\n• Marketing content for your products\n\nJust ask me anything about your artisan business!"
-};
-
 export default function Chatbot({ onClose }: ChatbotProps) {
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -27,21 +20,9 @@ export default function Chatbot({ onClose }: ChatbotProps) {
     }
   ]);
   const [input, setInput] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const getResponse = (userMessage: string): string => {
-    const lowerMessage = userMessage.toLowerCase();
-    
-    for (const [key, response] of Object.entries(mockResponses)) {
-      if (lowerMessage.includes(key.split(' ').slice(0, 2).join(' ')) || 
-          key.split(' ').some(word => lowerMessage.includes(word))) {
-        return response;
-      }
-    }
-    
-    return "I understand you're asking about artisan business. I can help with neighborhood selection, pricing strategies, and market trends. Try asking 'Where should I open a shop in Mumbai?' or 'What products are trending in Bandra?'";
-  };
-
-  const handleSend = () => {
+  const handleSend = async () => {
     if (!input.trim()) return;
 
     const userMessage: Message = {
@@ -51,23 +32,39 @@ export default function Chatbot({ onClose }: ChatbotProps) {
     };
 
     setMessages(prev => [...prev, userMessage]);
+    setInput('');
+    setLoading(true);
 
-    setTimeout(() => {
+    try {
+      const response = await fetch("http://localhost:5001/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: input }),
+      });
+
+      const data = await response.json();
+
       const botMessage: Message = {
-        text: getResponse(input),
+        text: data.reply,
+        sender: 'bot',
+        timestamp: new Date()
+      };
+
+      setMessages(prev => [...prev, botMessage]);
+    } catch (err) {
+      const botMessage: Message = {
+        text: "⚠️ Error: Could not connect to backend.",
         sender: 'bot',
         timestamp: new Date()
       };
       setMessages(prev => [...prev, botMessage]);
-    }, 1000);
-
-    setInput('');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
-      handleSend();
-    }
+    if (e.key === 'Enter') handleSend();
   };
 
   return (
@@ -96,6 +93,14 @@ export default function Chatbot({ onClose }: ChatbotProps) {
               </div>
             </div>
           ))}
+
+          {loading && (
+            <div className="flex justify-start">
+              <div className="p-3 rounded-lg bg-gray-100 text-gray-800 text-sm">
+                Bot is typing...
+              </div>
+            </div>
+          )}
         </div>
         
         <div className="p-4 border-t border-gray-200">

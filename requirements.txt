@@ -1,36 +1,39 @@
 # Kala Vistar - AI-Powered Marketplace Assistant for Local Artisans
-# This is a React/TypeScript project - dependencies are managed via package.json
+# React + TypeScript project dependencies
 
+# -------------------------------
 # Frontend Framework & Build Tools
-# React 18.3.1 - UI library
-# TypeScript 5.5.3 - Type safety
-# Vite 5.4.2 - Build tool and dev server
+# -------------------------------
+react==18.3.1
+react-dom==18.3.1
+typescript==5.5.3
+vite==5.4.2
 
+# -------------------------------
 # UI & Styling
-# Tailwind CSS 3.4.1 - Utility-first CSS framework
-# Lucide React 0.344.0 - Icon library
-# PostCSS 8.4.35 - CSS processing
-# Autoprefixer 10.4.18 - CSS vendor prefixes
+# -------------------------------
+tailwindcss==3.4.1
+postcss==8.4.35
+autoprefixer==10.4.18
+lucide-react==0.344.0
 
+# -------------------------------
 # Development Tools
-# ESLint 9.9.1 - Code linting
-# TypeScript ESLint 8.3.0 - TypeScript-specific linting rules
+# -------------------------------
+eslint==9.9.1
+@typescript-eslint/eslint-plugin==8.3.0
+@typescript-eslint/parser==8.3.0
 
-# Backend/Database (if needed in future)
-# Supabase JS 2.57.4 - Backend as a service client
+# -------------------------------
+# Backend/Database (Optional)
+# -------------------------------
+@supabase/supabase-js==2.57.4
 
-# To install dependencies, run:
-# npm install
-
-# To start development server:
-# npm run dev
-
-# To build for production:
-# npm run build
-
-# Key Features Implemented:
-# - Interactive AI chatbot with mock responses
-# - Neighborhood predictor with dynamic charts
+# -------------------------------
+# Project Features
+# -------------------------------
+# - Interactive AI chatbot (mock responses for now)
+# - Neighborhood predictor (charts with demo data)
 # - Marketing content generator
 # - Responsive design with Indian cultural elements
-# - Contact forms and social media integration
+# - Contact form + social media integration
