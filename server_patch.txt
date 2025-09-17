@@ -1,0 +1,14 @@
+// In server.js
+
+import footfallRoutes from './routes/footfall.js';
+app.use('/footfall', footfallRoutes);
+
+// Attach DB client (Postgres example)
+import pkg from 'pg';
+const { Pool } = pkg;
+const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+
+app.use((req, res, next) => {
+  req.db = pool;
+  next();
+});
