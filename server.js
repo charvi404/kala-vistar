@@ -26,7 +26,7 @@ app.use(async (req, res, next) => {
   }
 });
 
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({ origin: ["http://localhost:5173", "http://localhost:5174"] }));
 app.use(bodyParser.json());
 app.use('/footfall', footfallRoutes);
 
